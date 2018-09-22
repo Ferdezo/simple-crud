@@ -7,6 +7,7 @@
 * Spring MVC
 * Spring Boot
 * MyBatis
+* H2 Database
 * Spring Cloud Contracts
 
 **Contract testing** <br/>
