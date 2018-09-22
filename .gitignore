@@ -1,0 +1,45 @@
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+## Java ##
+*.class
+*.jar
+*.war
+*.ear
+
+## Intellij ##
+.idea
+*.iml
+*.iws
+*.ipr
+
+## Eclipse ##
+.classpath
+.loadpath
+.project
+.metadata
+.settings
+bin
+
+## Maven ##
+target
+log
+*.versionsBackup
+
+## Mac ##
+.DS_Store
+
+## Merge tools ##
+*.orig
+
+## STS (Spring Tool Suite) ##
+.springBeans
+
+## Visual Studio Code ##
+.vscode
+
+## Spring Data Elasticsearch ##
+elasticsearch_test
+
+## PF ##
+${*}
