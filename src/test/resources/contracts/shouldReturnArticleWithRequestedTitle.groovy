@@ -7,7 +7,7 @@ Contract.make {
 
     request {
         method GET()
-        url("/article/1?title=Nowy selekcjoner")
+        url("/article?title=Nowy selekcjoner")
     }
 
     response {
