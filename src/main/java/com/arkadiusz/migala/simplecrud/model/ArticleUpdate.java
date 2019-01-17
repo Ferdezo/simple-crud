@@ -8,6 +8,8 @@ import javax.validation.constraints.NotNull;
 @Getter
 @RequiredArgsConstructor
 public class ArticleUpdate {
-    @NotNull private final Long id;
-    @NotNull private final String content;
+    @NotNull
+    private final Long id;
+    @NotNull
+    private final String content;
 }
