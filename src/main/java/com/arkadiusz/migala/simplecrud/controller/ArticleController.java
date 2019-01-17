@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/article")
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@RequiredArgsConstructor
 @Log4j2
 public class ArticleController {
     private final ArticleRepository repository;
@@ -24,13 +24,13 @@ public class ArticleController {
         return repository.findAll();
     }
 
-    @RequestMapping(value = "/{id}")
-    public List<ArticleRead> getAllWithId(@PathVariable("id") Long id) {
+    @GetMapping("/{id}")
+    public List<ArticleRead> getAllWithId(@PathVariable Long id) {
         return repository.findById(id);
     }
 
     @GetMapping(params = "title")
-    public List<ArticleRead> getAllWithTitle(@RequestParam("title") String title) {
+    public List<ArticleRead> getAllWithTitle(@RequestParam String title) {
         return repository.findByTitle(title);
     }
 
@@ -39,15 +39,16 @@ public class ArticleController {
         repository.insert(article);
     }
 
-    @DeleteMapping(path = "/{id}")
-    public void delete(@PathVariable("id") Long id) {
+    @DeleteMapping("/{id}")
+    public void delete(
+            @PathVariable Long id) {
         log.info("Deletion of article with id {}", id);
         repository.delete(id);
     }
 
-    @PutMapping(path = "/{id}")
+    @PutMapping("/{id}")
     public void update(
-            @PathVariable("id") Long id,
+            @PathVariable Long id,
             @RequestParam String content) {
         log.info("Modification of article with id {}", id);
         repository.updateContent(

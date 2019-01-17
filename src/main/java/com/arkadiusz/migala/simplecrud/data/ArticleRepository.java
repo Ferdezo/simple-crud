@@ -20,7 +20,7 @@ public interface ArticleRepository {
     List<ArticleRead> findAll();
 
     @Insert("INSERT INTO article(title, content) VALUES (#{title}, #{content})")
-    @Options(useGeneratedKeys = true, keyColumn="id")
+    @Options(useGeneratedKeys = true, keyColumn = "id")
     void insert(ArticleWrite article);
 
     @Update("UPDATE article SET article.content = #{content} WHERE article.id = #{id}")

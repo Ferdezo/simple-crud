@@ -8,6 +8,8 @@ import javax.validation.constraints.NotNull;
 @Getter
 @RequiredArgsConstructor
 public class ArticleWrite {
-    @NotNull private final String title;
-    @NotNull private final String content;
+    @NotNull
+    private final String title;
+    @NotNull
+    private final String content;
 }
