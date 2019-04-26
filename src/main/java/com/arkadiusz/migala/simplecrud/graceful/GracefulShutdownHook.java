@@ -29,13 +29,13 @@ public class GracefulShutdownHook implements Runnable {
     }
 
     private void setReadynessToFalse() {
-        log.info("Setting readyness for application to false, so the application doesn't receive new connections from Openshift");
+        log.info("Setting readiness for application to false, so the application doesn't receive new connections from Openshift");
         final Map<String, ProbeController> probeControllers = applicationContext.getBeansOfType(ProbeController.class);
         if (probeControllers.size() < 1) {
             log.error("Could not find a ProbeController Bean. Your ProbeController needs to implement the Interface: " + ProbeController.class.getName());
         }
         if (probeControllers.size() > 1) {
-            log.warn("You have more than one ProbeController for Readyness-Check registered. " +
+            log.warn("You have more than one ProbeController for Readiness-Check registered. " +
                 "Most probably one as Rest service and one in automatically configured as Actuator health check.");
         }
         for (ProbeController probeController : probeControllers.values()) {
