@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Collection;
 import java.util.List;
 
 import static junit.framework.TestCase.assertFalse;
@@ -36,7 +37,7 @@ public class ArticleCreationTest {
 
         // when
         articleController.create(articleToWrite);
-        List<ArticleRead> articlesWithGivenTitle = articleController.getAllWithTitle(title);
+        Collection<ArticleRead> articlesWithGivenTitle = articleController.getAllWithTitle(title);
 
         // then
         assertFalse(articlesWithGivenTitle.isEmpty());

@@ -1,0 +1,15 @@
+# H2 Database
+spring:
+  h2:
+    console:
+      enabled: true
+
+# Logging
+logging:
+  level:
+    com.arkadiusz.migala.*: debug
+
+article:
+  adds:
+    enabled: false
+    content: Go to DAZN!
